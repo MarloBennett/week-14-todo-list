@@ -8,9 +8,9 @@
       <li>
         {{itemName}}
 
-        <form action="list/update/{{id}}?_method=PUT" method="POST">
-          <input type="hidden" name="isDone" value="true">
-          <button type="submit">Done!</button>
+        <form action="list/update/{{id}}?" method="POST">
+          
+          <button name="isDone" value="true" type="submit">Done!</button>
         </form>
 
       </li>

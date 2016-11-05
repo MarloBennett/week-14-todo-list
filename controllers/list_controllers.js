@@ -20,7 +20,7 @@ router.put("/list/create", function (req, res) {
 	});
 });
 
-router.put("/list/update/:id", function(req, res) {
+router.post("/list/update/:id", function(req, res) {
 	var condition = "id = " + req.params.id;
 
 	console.log("condition, " + condition);
