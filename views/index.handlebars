@@ -8,7 +8,7 @@
       <li>
         {{itemName}}
 
-        <form action="toDoList/updateOne/{{id}}?_method=PUT" method="POST">
+        <form action="list/update/{{id}}?_method=PUT" method="POST">
           <input type="hidden" name="isDone" value="true">
           <button type="submit">Done!</button>
         </form>
@@ -30,3 +30,14 @@
     {{/if}}
   {{/each}}
 </ul>
+
+<h2>Add a task</h2>
+
+ <form action="list/create/{{id}}?_method=PUT" method="POST">
+
+    <label>New task:</label>
+     <input type="hidden" name="isDone" value="false">
+    <input type="text" name="itemName">
+
+  <button type="submit">Add task</button>
+</form>

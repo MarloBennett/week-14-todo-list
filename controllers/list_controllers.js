@@ -7,15 +7,15 @@ router.get("/", function(req, res) {
 });
 
 router.get("/list", function(req, res) {
-	task.selectAll(function(data) {
-		var hbsObject = {toDoList:data};
+	task.all(function(data) {
+		var hbsObject = {toDoList: data};
 		console.log(hbsObject);
 		res.render("index", hbsObject);
 	});
 });
 
-router.post("/list/create", function (req, res) {
-	task.insertOne("newItem", req.body.newItem, function() {
+router.put("/list/create", function (req, res) {
+	task.create(["itemName", "isDone"], [req.body.itemName, req.body.isDone], function() {
 		res.redirect("/list");
 	});
 });
@@ -25,7 +25,7 @@ router.put("/list/update/:id", function(req, res) {
 
 	console.log("condition, " + condition);
 
-	task.updateOne(condition, function() {
+	task.update({isDone: req.body.isDone}, condition, function() {
 		res.redirect("/list");
 	});
 });

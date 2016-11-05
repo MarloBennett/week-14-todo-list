@@ -3,20 +3,20 @@ var orm = require("../config/orm.js");
 
 var task = {
 
-	selectAll: function(cb) {
-		orm.selectAll("toDoList", function(res) {
+	all: function(cb) {
+		orm.all("toDoList", function(res) {
 			cb(res);
 		});
 	},
 
-	insertOne: function(newItem, cb) {
-		orm.insertOne("toDoList", newItem, function(res) {
+	create: function(columns, values, cb) {
+		orm.create("toDoList", columns, values, function(res) {
 			cb(res);
 		});
 	},
 
-	updateOne: function(condition, cb) {
-		orm.updateOne("toDoList", condition, function(res) {
+	update: function(objColVals, condition, cb) {
+		orm.update("toDoList", objColVals, condition, function(res) {
 			cb(res);
 		});
 	}
