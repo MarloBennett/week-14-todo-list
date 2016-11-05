@@ -14,7 +14,7 @@ router.get("/list", function(req, res) {
 	});
 });
 
-router.put("/list/create", function (req, res) {
+router.post("/list/create", function (req, res) {
 	task.create(["itemName", "isDone"], [req.body.itemName, req.body.isDone], function() {
 		res.redirect("/list");
 	});

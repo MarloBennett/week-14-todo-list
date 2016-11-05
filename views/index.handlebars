@@ -33,10 +33,10 @@
 
 <h2>Add a task</h2>
 
- <form action="list/create/{{id}}?_method=PUT" method="POST">
+ <form action="list/create/{{id}}?" method="POST">
 
     <label>New task:</label>
-     <input type="hidden" name="isDone" value="false">
+     <input type="hidden" name="isDone" value="0">
     <input type="text" name="itemName">
 
   <button type="submit">Add task</button>
