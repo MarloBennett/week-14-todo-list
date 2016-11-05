@@ -14,7 +14,7 @@ router.get("/list", function(req, res) {
 	});
 });
 
-router.post('/list/create', function (req, res) {
+router.post("/list/create", function (req, res) {
 	task.insertOne("newItem", req.body.newItem, function() {
 		res.redirect("/list");
 	});
