@@ -1,12 +1,18 @@
 //connect to mysql database and make exportable
 var mysql = require("mysql");
-var connection = mysql.createConnection({
+var connection; 
+
+if (process.env.JAWSDB_URL) {
+	connection = mysql.createConnection(process.env.JAWSDB_URL);
+} else {
+	connection = mysql.createConnection({
 	port: 3306,
 	host: "localhost",
 	user: "marlo",
 	password: "marlosql",
 	database: "toDoList_db"
 });
+};
 
 connection.connect(function (err) {
 	if (err) {
