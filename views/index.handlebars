@@ -11,12 +11,17 @@
   <div id="to-do">
     <h2>Tasks to Do</h2>
 
+<!--
+loop through database items and display the ones that have a false value for isDone
+ -->
     <ul>
       {{#each toDoList}}
         {{#unless isDone}}
           <li>
             {{itemName}}
-
+<!--
+input for changing item to done
+ -->
             <form action="list/update/{{id}}?" method="POST">
               
               <button name="isDone" value="true" type="submit">Done!</button>
@@ -31,6 +36,9 @@
   <div id="done">
     <h2>Tasks That Are Done</h2>
 
+<!--
+loop through database items and display the ones that have a true value for isDone
+ -->
     <ul>
       {{#each toDoList}}
         {{#if isDone}}
@@ -43,9 +51,15 @@
     </ul>
   </div>
 
+<!--
+section to add an item to the list
+ -->
   <div id="add-task">
     <h2>Add a Task</h2>
 
+<!--
+input for new item
+ -->
      <form action="list/create/{{id}}?" method="POST">
 
         <label>New task:</label>
